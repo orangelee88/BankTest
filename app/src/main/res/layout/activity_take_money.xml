@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC107"
+    tools:context=".TakeMoney">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="406dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="1dp"
+        android:background="#03A9F4"
+        android:gravity="center"
+        android:text="~~中央銀行歡迎您~~"
+        android:textColor="#FF9800"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="333dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#DD8E8E"
+        android:gravity="center"
+        android:text="請選擇或輸入存錢金額"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Show"
+        android:layout_width="117dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:text="金額＝"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/InputMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/Show"
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Show"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Show"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text="2000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="5000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text="10000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="20000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn4"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
