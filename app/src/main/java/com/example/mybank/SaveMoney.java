@@ -12,15 +12,15 @@ import android.widget.Toast;
 
 public class SaveMoney extends AppCompatActivity {
     int a = 100000;
-    EditText m;                //宣告全域變數
-    private Button button1;
+    EditText m;                //宣告全域變數,// 輸入者結果
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_save_money );
 
-        m = (EditText)findViewById(R.id.InputMoney);     // 取得輸入者金額
+        m = (EditText) findViewById( R.id.InputMoney );     // 取得輸入者金額
         Button button1 = findViewById( R.id.btn1 );
         button1.setOnClickListener( new View.OnClickListener() {
 
@@ -45,7 +45,7 @@ public class SaveMoney extends AppCompatActivity {
                 a = a + 1000; /**金額+1000動作*/
                 String s = Integer.toString( a );
                 addText.setText( s );
-                Toast.makeText( SaveMoney.this, "存錢500元", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( SaveMoney.this, "存錢1000元", Toast.LENGTH_SHORT ).show();
             }
         } );
 
@@ -58,7 +58,7 @@ public class SaveMoney extends AppCompatActivity {
                 a = a + 1000; /**金額+2000動作*/
                 String s = Integer.toString( a );
                 addText.setText( s );
-                Toast.makeText( SaveMoney.this, "存錢500元", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( SaveMoney.this, "存錢2000元", Toast.LENGTH_SHORT ).show();
             }
         } );
 
@@ -71,7 +71,7 @@ public class SaveMoney extends AppCompatActivity {
                 a = a + 5000; /**金額+5000動作*/
                 String s = Integer.toString( a );
                 addText.setText( s );
-                Toast.makeText( SaveMoney.this, "存錢500元", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( SaveMoney.this, "存錢5000元", Toast.LENGTH_SHORT ).show();
             }
         } );
 
@@ -84,7 +84,7 @@ public class SaveMoney extends AppCompatActivity {
                 a = a + 10000; /**金額+10000動作*/
                 String s = Integer.toString( a );
                 addText.setText( s );
-                Toast.makeText( SaveMoney.this, "存錢500元", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( SaveMoney.this, "存錢10000元", Toast.LENGTH_SHORT ).show();
             }
         } );
 
@@ -97,23 +97,24 @@ public class SaveMoney extends AppCompatActivity {
                 a = a + 50000; /**金額+50000動作*/
                 String s = Integer.toString( a );
                 addText.setText( s );
-                Toast.makeText( SaveMoney.this, "存錢500元", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( SaveMoney.this, "存錢50000元", Toast.LENGTH_SHORT ).show();
             }
         } );
 
-        Button button7 = findViewById( R.id.btn7 );
+        Button button7 = findViewById( R.id.btn7 );/**點擊確認按鈕*/
         button7.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                int sum=0;
+                sum = sum + a;
                 Intent intent = new Intent();
                 /**new一個Bundle物件，並將要傳遞的資料傳入*/
-                intent.setClass(SaveMoney.this,CheckBalances.class);
+                intent.setClass( SaveMoney.this, CheckBalances.class );
                 /**將Bundle物件傳給intent*/
                 Bundle bundle = new Bundle();
-                bundle.putString("money",m.getText().toString());
-
-                intent.putExtras(bundle);   // 記得put進去，不然資料不會帶過去哦
+                bundle.putString( "sum", m.getText().toString() );
+                intent.putExtras( bundle );   // 記得put進去，不然資料不會帶過去
                 /**啟用意圖*/
                 startActivity( intent );
                 Toast.makeText( SaveMoney.this, "顯示存款金額", Toast.LENGTH_SHORT ).show();

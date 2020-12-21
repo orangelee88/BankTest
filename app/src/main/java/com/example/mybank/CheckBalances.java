@@ -17,13 +17,12 @@ public class CheckBalances extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_check_balances );
 
-
         Bundle bundle = getIntent().getExtras();/**取得傳遞過來的資料*/
-        String h = bundle.getString("money" );
-        TextView addText = findViewById( R.id.number );/**取得 顯示金額*/
+        String a = bundle.getString("sum" );
+        TextView result = findViewById( R.id.tv5);/**取得 顯示金額*/
+        result.setText( a );
         Button button1 = findViewById( R.id.btn1 );  /**返回按鈕*/
         button1.setOnClickListener( new View.OnClickListener() {
-
 
             @Override
             public void onClick(View v) {

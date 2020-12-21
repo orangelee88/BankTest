@@ -59,7 +59,7 @@
         android:id="@+id/InputMoney"
         android:layout_width="131dp"
         android:layout_height="50dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="number"
         android:textColor="@color/black"
