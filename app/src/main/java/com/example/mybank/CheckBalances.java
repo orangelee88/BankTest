@@ -10,17 +10,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CheckBalances extends AppCompatActivity {
-    int a = 100000;/**初始值　100000元*/
-
+    int a = 100000;
+    /**初始值　100000元*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_check_balances );
-
         Bundle bundle = getIntent().getExtras();/**取得傳遞過來的資料*/
-        String a = bundle.getString("sum" );
-        TextView result = findViewById( R.id.tv5);/**取得 顯示金額*/
-        result.setText( a );
+        if(bundle != null){
+            String a = bundle.getString( "sum" );
+            TextView result = findViewById( R.id.tv5 );/**取得 顯示金額*/
+            result.setText( a );
+        }
         Button button1 = findViewById( R.id.btn1 );  /**返回按鈕*/
         button1.setOnClickListener( new View.OnClickListener() {
 
@@ -29,7 +30,7 @@ public class CheckBalances extends AppCompatActivity {
                 Toast.makeText( CheckBalances.this, "回主頁面", Toast.LENGTH_SHORT ).show();
                 Intent intent = new Intent( CheckBalances.this, MainActivity.class );/** 返回主頁*/
                 startActivity( intent );
-                CheckBalances.this.finish();//結束目前Activity
+
             }
         } );
 

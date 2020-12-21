@@ -115,12 +115,9 @@ public class SaveMoney extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString( "sum", m.getText().toString() );
                 intent.putExtras( bundle );   // 記得put進去，不然資料不會帶過去
+                Toast.makeText( SaveMoney.this, "顯示存款金額", Toast.LENGTH_SHORT ).show();
                 /**啟用意圖*/
                 startActivity( intent );
-                Toast.makeText( SaveMoney.this, "顯示存款金額", Toast.LENGTH_SHORT ).show();
-                Intent Enter = new Intent( SaveMoney.this, CheckBalances.class );/**觸發確認鍵*/
-                startActivity( Enter );/**跳到顯示金額頁面*/
-                SaveMoney.this.finish();//結束目前Activity
             }
         } );
     }

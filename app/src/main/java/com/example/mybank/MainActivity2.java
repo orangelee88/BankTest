@@ -56,7 +56,8 @@ public class MainActivity2 extends AppCompatActivity {
                 Toast.makeText( MainActivity2.this, "回主頁面", Toast.LENGTH_SHORT ).show();
                 Intent intent = new Intent( MainActivity2.this, MainActivity.class );/** 返回主頁*/
                 startActivity( intent );
-                MainActivity2.this.finish();//結束目前Activity
+               // MainActivity2.this.finish();//結束目前Activity
+
             }
         } );
     }
