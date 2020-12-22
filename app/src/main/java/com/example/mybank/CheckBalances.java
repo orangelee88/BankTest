@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class CheckBalances extends AppCompatActivity {
     int a = 100000;
+
     /**初始值　100000元*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,10 @@ public class CheckBalances extends AppCompatActivity {
             TextView result = findViewById( R.id.tv5 );/**取得 顯示金額*/
             result.setText( a );
         }
+        String money = getSharedPreferences("SaveMoney", MODE_PRIVATE)
+                .getString("money", "a");
+        TextView result = findViewById( R.id.tv5 );/**取得 顯示金額*/
+        result.setText( money );
         Button button1 = findViewById( R.id.btn1 );  /**返回按鈕*/
         button1.setOnClickListener( new View.OnClickListener() {
 

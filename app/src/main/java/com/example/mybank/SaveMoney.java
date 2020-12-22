@@ -3,6 +3,7 @@ package com.example.mybank;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,7 +56,7 @@ public class SaveMoney extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView addText = findViewById( R.id.InputMoney );/** 把值存入2000元*/
-                a = a + 1000; /**金額+2000動作*/
+                a = a + 2000; /**金額+2000動作*/
                 String s = Integer.toString( a );
                 addText.setText( s );
                 Toast.makeText( SaveMoney.this, "存錢2000元", Toast.LENGTH_SHORT ).show();
@@ -106,13 +107,14 @@ public class SaveMoney extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                int sum=0;
-                sum = sum + a;
+
+                SharedPreferences save = getSharedPreferences( "SaveMoney", MODE_PRIVATE );
+                save.edit().putString( "money", m.getText().toString() )
+                        .apply();
+
                 Intent intent = new Intent();
-                /**new一個Bundle物件，並將要傳遞的資料傳入*/
                 intent.setClass( SaveMoney.this, CheckBalances.class );
-                /**將Bundle物件傳給intent*/
-                Bundle bundle = new Bundle();
+                Bundle bundle = new Bundle(); /**new一個Bundle物件，並將要傳遞的資料傳入*/
                 bundle.putString( "sum", m.getText().toString() );
                 intent.putExtras( bundle );   // 記得put進去，不然資料不會帶過去
                 Toast.makeText( SaveMoney.this, "顯示存款金額", Toast.LENGTH_SHORT ).show();

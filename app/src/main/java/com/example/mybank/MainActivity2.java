@@ -43,7 +43,7 @@ public class MainActivity2 extends AppCompatActivity {
         public void onClick(View v) {
 
             Toast.makeText( MainActivity2.this, "進入銀行領錢頁面", Toast.LENGTH_SHORT ).show();
-            Intent intent = new Intent( MainActivity2.this,TakeMoney.class );/** 跳下一頁存錢頁面*/
+            Intent intent = new Intent( MainActivity2.this,TakeMoney.class );/** 跳下一頁提錢頁面*/
             startActivity( intent );
         }
         } );
